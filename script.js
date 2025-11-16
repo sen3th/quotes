@@ -1,10 +1,16 @@
 const quoteElement = document.getElementById("quote");
 
 function newQuote() {
-    let randomIndex = Math.floor(Math.random() * quoteList.length);
-    const selectedQuote = quoteList[randomIndex]
-    quoteElement.innerHTML = selectedQuote;
+    quoteElement.classList.add("hide");
+    setTimeout(() => {
+        let randomIndex = Math.floor(Math.random() * quoteList.length);
+        const selectedQuote = quoteList[randomIndex];
+        quoteElement.innerHTML = selectedQuote;
+        quoteElement.classList.remove("hide");
+    }, 1000);
 }
+
+
 
 const quoteList = [
     "Be yourself; everyone else is already taken. <span class='author'> <br> -Oscar Wilde </span>",
