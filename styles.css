@@ -1,11 +1,17 @@
 body {
     font-family: 'Times New Roman', Times, serif;
     background-color: linen;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
     text-align: center;
     color: saddlebrown;
+    margin-bottom: 10%;
 }
 
 h1:hover {
@@ -15,7 +21,6 @@ h1:hover {
 }
 
 .quoteBox {
-    margin-top: 75px;
     align-items: center;
     text-align: center;
 }
