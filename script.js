@@ -1,12 +1,17 @@
 const quoteElement = document.getElementById("quote");
+let lastIndex = -1;
 
 function newQuote() {
     quoteElement.classList.add("hide");
     setTimeout(() => {
         let randomIndex = Math.floor(Math.random() * quoteList.length);
+        while (randomIndex === lastIndex) {
+            randomIndex = Math.floor(Math.random() * quoteList.length);
+        }
         const selectedQuote = quoteList[randomIndex];
         quoteElement.innerHTML = selectedQuote;
         quoteElement.classList.remove("hide");
+        lastIndex = randomIndex;
     }, 1000);
 }
 
