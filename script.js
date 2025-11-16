@@ -1,6 +1,16 @@
 const quoteElement = document.getElementById("quote");
 let lastIndex = -1;
 
+window.onload = () => {
+    newQuote();
+}
+
+window.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === "ArrowRight") {
+        newQuote();
+    }
+});
+
 function newQuote() {
     quoteElement.classList.add("hide");
     setTimeout(() => {
