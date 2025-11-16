@@ -1,0 +1,34 @@
+body {
+    font-family: 'Times New Roman', Times, serif
+}
+
+h1 {
+    text-align: center;
+}
+
+.quoteBox {
+    margin-top: 75px;
+    align-items: center;
+    text-align: center;
+}
+
+#quote {
+    font-size: large;
+}
+
+button {
+    padding: 2px 2px;
+    font-size: medium;
+    animation: buttonHover 0.7s;
+}
+
+button:hover{
+    background-color: lightgray;
+    cursor: pointer;
+    transition: background-color 0.5s;}
+
+#newQuoteButton {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+}
