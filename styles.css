@@ -26,15 +26,17 @@ h1:hover {
 }
 
 button {
-    padding: 2px 2px;
+    padding: 5px 5px;
     font-size: large;
     animation: buttonHover 0.7s;
     color: #4f3b00;
     background-color:rgb(255, 241, 219);
+    border: 1.5px solid #4f3b00;
+    border-radius: 2px;
 }
 
 button:hover{
-    background-color: #f3eee1;
+    background-color: #f3e6c6;
     cursor: pointer;
     transition: background-color 0.5s;}
 
