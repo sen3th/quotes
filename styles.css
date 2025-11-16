@@ -1,5 +1,6 @@
 body {
     font-family: 'Times New Roman', Times, serif;
+    background-color: linen;
 }
 
 h1 {
@@ -10,7 +11,7 @@ h1 {
 h1:hover {
     cursor: default;
     color: rgb(89, 87, 87);
-    transition: color 1s;
+    transition: color 3s;
 }
 
 .quoteBox {
@@ -28,11 +29,12 @@ button {
     padding: 2px 2px;
     font-size: large;
     animation: buttonHover 0.7s;
-    color: rgb(42, 66, 67);
+    color: #4f3b00;
+    background-color:rgb(255, 241, 219);
 }
 
 button:hover{
-    background-color: lightgray;
+    background-color: #f3eee1;
     cursor: pointer;
     transition: background-color 0.5s;}
 
@@ -40,9 +42,27 @@ button:hover{
     margin-top: 20px;
     margin-bottom: 20px;
     width: 50%;
+    position: relative;
 }
 
 .author{
     font-size: x-large;
     color: sienna;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: medium;
+    color: gray;
+    margin: 0;
+    padding: 5px 0;
+}
+footer a {
+    text-decoration: none;
+    color: gray;
 }
