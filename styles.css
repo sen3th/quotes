@@ -1,9 +1,16 @@
 body {
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif;
 }
 
 h1 {
     text-align: center;
+    color: saddlebrown;
+}
+
+h1:hover {
+    cursor: default;
+    color: rgb(89, 87, 87);
+    transition: color 1s;
 }
 
 .quoteBox {
@@ -13,13 +20,15 @@ h1 {
 }
 
 #quote {
-    font-size: large;
+    font-size: xx-large;
+    color: rgb(89, 87, 87);
 }
 
 button {
     padding: 2px 2px;
-    font-size: medium;
+    font-size: large;
     animation: buttonHover 0.7s;
+    color: rgb(42, 66, 67);
 }
 
 button:hover{
@@ -31,4 +40,9 @@ button:hover{
     margin-top: 20px;
     margin-bottom: 20px;
     width: 50%;
+}
+
+.author{
+    font-size: x-large;
+    color: sienna;
 }
