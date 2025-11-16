@@ -11,7 +11,6 @@ body {
 h1 {
     text-align: center;
     color: saddlebrown;
-    margin-bottom: 10%;
 }
 
 h1:hover {
@@ -29,12 +28,13 @@ h1:hover {
     font-size: xx-large;
     color: rgb(89, 87, 87);
     opacity: 1;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transform: translateY(0) scale(1);
 }
 
 #quote.hide {
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transform: translateY(20px) scale(0.95);
 }
 
 button {
@@ -49,7 +49,9 @@ button {
 button:hover{
     background-color: #f3e6c6;
     cursor: pointer;
-    transition: background-color 0.5s;}
+    transition: background-color 0.5s;
+    transform: scale(1.05);
+}
 
 #divider {
     margin-top: 20px;
