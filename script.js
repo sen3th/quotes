@@ -51,10 +51,12 @@ function toggleMode() {
     document.body.classList.toggle("dark-mode");
     document.querySelector("h1").classList.toggle("dark-mode");
     quoteElement.classList.toggle("dark-mode");
-    const authorElements = document.querySelectorAll(".author");
-    authorElements.forEach(element => element.classList.toggle("dark-mode"));
     document.getElementById("modeToggle").classList.toggle("dark-mode");
     document.getElementById("newQuoteButton").classList.toggle("dark-mode");
+}
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    toggleMode();
 }
 
 const quoteList = [

@@ -6,6 +6,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: background-color 400ms ease, color 400ms ease;
 }
 
 body.dark-mode {
@@ -21,6 +22,7 @@ body.dark-mode {
 h1 {
     text-align: center;
     color: saddlebrown;
+    transition: color 400ms ease;
 }
 
 h1.dark-mode {
@@ -43,7 +45,7 @@ h1:hover {
     font-size: xx-large;
     color: rgb(89, 87, 87);
     opacity: 1;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out, color 400ms ease;
     transform: translateY(0) scale(1);
 }
 
@@ -51,7 +53,7 @@ h1:hover {
     font-size: xx-large;
     color: rgb(250, 244, 240);
     opacity: 1;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out, color 400ms ease;
     transform: translateY(0) scale(1);
 }
 
@@ -67,6 +69,7 @@ h1:hover {
     background-color:rgb(255, 241, 219);
     border: 1.5px solid #4f3b00;
     border-radius: 2px;
+    transition: background-color 300ms ease, color 300ms ease, transform 150ms ease;
 }
 
 #newQuoteButton.dark-mode {
@@ -95,9 +98,15 @@ h1:hover {
 .author{
     font-size: x-large;
     color: sienna;
+    transition: color 400ms ease;
 }
 
 .author.dark-mode{
+    font-size: x-large;
+    color: rgb(246, 163, 125);
+}
+
+.dark-mode .author {
     font-size: x-large;
     color: rgb(246, 163, 125);
 }
@@ -130,6 +139,7 @@ footer a {
     border: 1.5px solid #4f3b00;
     border-radius: 2px;
     cursor: pointer;
+    transition: background-color 300ms ease, color 300ms ease, transform 150ms ease;
 }
 
 #modeToggle.dark-mode {
