@@ -1,5 +1,6 @@
 const quoteElement = document.getElementById("quote");
 let lastIndex = -1;
+let prevIndex = -1;
 
 window.onload = () => {
     newQuote();
@@ -8,6 +9,25 @@ window.onload = () => {
 window.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === "ArrowRight") {
         newQuote();
+    }
+});
+
+window.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+        if (prevIndex === -1) return;
+        quoteElement.classList.add("hide");
+
+        setTimeout(() => {
+            const selectedQuote = quoteList[prevIndex];
+            quoteElement.innerHTML = selectedQuote;
+
+            const tmp = lastIndex;
+            lastIndex = prevIndex;
+            prevIndex = tmp;
+
+            
+            quoteElement.classList.remove("hide");
+        }, 1000);
     }
 });
 
@@ -21,6 +41,8 @@ function newQuote() {
         const selectedQuote = quoteList[randomIndex];
         quoteElement.innerHTML = selectedQuote;
         quoteElement.classList.remove("hide");
+        
+        prevIndex = lastIndex;
         lastIndex = randomIndex;
     }, 1000);
 }
