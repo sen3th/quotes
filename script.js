@@ -47,7 +47,15 @@ function newQuote() {
     }, 1000);
 }
 
-
+function toggleMode() {
+    document.body.classList.toggle("dark-mode");
+    document.querySelector("h1").classList.toggle("dark-mode");
+    quoteElement.classList.toggle("dark-mode");
+    const authorElements = document.querySelectorAll(".author");
+    authorElements.forEach(element => element.classList.toggle("dark-mode"));
+    document.getElementById("modeToggle").classList.toggle("dark-mode");
+    document.getElementById("newQuoteButton").classList.toggle("dark-mode");
+}
 
 const quoteList = [
     "Be yourself; everyone else is already taken. <span class='author'> <br> -Oscar Wilde </span>",
