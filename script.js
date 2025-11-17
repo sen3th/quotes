@@ -59,30 +59,37 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
     toggleMode();
 }
 
-const quoteList = [
-    "Be yourself; everyone else is already taken. <span class='author'> <br> -Oscar Wilde </span>",
-
-    "The only way to do great work is to love what you do. <br> <span class='author'>-Steve Jobs</span>",
-
-    "That's one small step for a man, one giant leap for mankind. <br> <span class='author'>-Neil Armstrong</span>",
-
-    "To thine own self be true. <br> <span class='author'>-William Shakespeare</span>",
-
-    "You miss 100% of the shots you don't take. <span class='author'> <br> -Wayne Gretzky</span>",
-    
-    "That which does not kill us makes us stronger. <span class='author'> <br> -Friedrich Nietzsche</span>",
-
-    "Believe you can and you're halfway there. <span class='author'> <br> -Theodore Roosevelt</span>",
-
-    "There's no place like home. <span class='author'> <br> -Dorothy Gale</span>",
-
-    "The only thing we have to fear is fear itself. <span class='author'> <br> -Franklin D. Roosevelt</span>",
-
-    "So many books, so little time. <span class='author'> <br> -Frank Zappa</span>",
-
-    "You only live once, but if you do it right, once is enough. <span class='author'> <br> -Mae West</span>",
-
-    "Be the change that you wish to see in the world. <span class='author'> <br> -Mahatma Gandhi</span>",
-
-    "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel. <span class='author'> <br> -Maya Angelou</span>",
+const authorsList = [
+    {id: 1, name: "Oscar Wilde"},
+    {id: 2, name: "Steve Jobs"},
+    {id: 3, name: "Neil Armstrong"},
+    {id: 4, name: "William Shakespeare"},
+    {id: 5, name: "Wayne Gretzky"},
+    {id: 6, name: "Friedrich Nietzsche"},
+    {id: 7, name: "Theodore Roosevelt"},
+    {id: 8, name: "Dorothy Gale"},
+    {id: 9, name: "Franklin D. Roosevelt"},
+    {id: 10, name: "Frank Zappa"},
+    {id: 11, name: "Mae West"},
+    {id: 12, name: "Mahatma Gandhi"},
+    {id: 13, name: "Maya Angelou"},
 ];
+
+const quoteList = [
+    {text:"Be yourself; everyone else is already taken.", authorId: 1},
+    {text:"The only way to do great work is to love what you do.", authorId: 2},
+    {text:"That's one small step for a man, one giant leap for mankind.", authorId: 3},
+    {text:"To thine own self be true.", authorId: 4},
+    {text:"You miss 100% of the shots you don't take.", authorId: 5},
+    {text:"That which does not kill us makes us stronger.", authorId: 6},
+    {text:"Believe you can and you're halfway there.", authorId: 7},
+    {text:"There's no place like home.", authorId: 8},
+    {text:"The only thing we have to fear is fear itself.", authorId: 9},
+    {text:"So many books, so little time.", authorId: 10},
+    {text:"You only live once, but if you do it right, once is enough.", authorId: 11},
+    {text:"Be the change that you wish to see in the world.", authorId: 12},
+    {text:"I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.", authorId: 13},
+].map(quote => {
+    const author = authorsList.find(a => a.id === quote.authorId);
+    return `${quote.text} <br> <span class='author'>-${author.name}</span>`;
+});
