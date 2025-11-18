@@ -74,6 +74,8 @@ function toggleMode() {
     if (likedBtn) likedBtn.classList.toggle("dark-mode");
     const homeBtn = document.getElementById("homeButton");
     if (homeBtn) homeBtn.classList.toggle("dark-mode");
+    const clearLikedBtn = document.getElementById("clearLikedQuotes");
+    if (clearLikedBtn) clearLikedBtn.classList.toggle("dark-mode");
 }
 
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
