@@ -328,3 +328,15 @@ footer a {
     cursor: pointer;
     transform: scale(1.05);
 }
+
+likedQuotesList {
+    font-size: large;
+    color: rgb(89, 87, 87);
+    opacity: 1;
+}
+
+#likedQuotesList.dark-mode {
+    font-size: large;
+    color: rgb(250, 244, 240);
+    opacity: 1;
+}
