@@ -1,9 +1,18 @@
 const quoteElement = document.getElementById("quote");
 let lastIndex = -1;
 let prevIndex = -1;
+const likedQuotes = JSON.parse(localStorage.getItem("likedQuotes")) || [];
 
 window.onload = () => {
-    newQuote();
+
+if (document.getElementById("quote")) {
+        newQuote();
+    }
+
+    if (document.getElementById("likedQuotesList")) {
+        displayLikedQuotes();
+    }
+
 }
 
 window.addEventListener("keydown", (event) => {
@@ -53,10 +62,52 @@ function toggleMode() {
     quoteElement.classList.toggle("dark-mode");
     document.getElementById("modeToggle").classList.toggle("dark-mode");
     document.getElementById("newQuoteButton").classList.toggle("dark-mode");
+    document.getElementById("likeButton").classList.toggle("dark-mode");
+    document.getElementById("likedQuotesButton")?.classList.toggle("dark-mode");
 }
 
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     toggleMode();
+}
+
+function likeQuote() {
+    const likeButton = document.getElementById("likeButton");
+    if (likeButton.classList.contains("liked")) {
+        likeButton.classList.remove("liked");
+        likeButton.innerHTML = `<i class="fa-regular fa-heart"></i>`;
+    } else {
+        likeButton.classList.add("liked");
+        likeButton.innerHTML = `<i class="fa-solid fa-heart"></i>`;
+    }
+    saveLikedQuotes();
+}
+
+function saveLikedQuotes() {
+    const currentQuote = quoteElement.innerHTML;
+    if (likeButton.classList.contains("liked")) {
+        if (!likedQuotes.includes(currentQuote)) {
+            likedQuotes.push(currentQuote);
+        }
+    } else {
+        const index = likedQuotes.indexOf(currentQuote);
+        if (index > -1) {
+            likedQuotes.splice(index, 1);
+        }
+    }
+    localStorage.setItem("likedQuotes", JSON.stringify(likedQuotes));
+}
+
+function displayLikedQuotes() {
+    document.getElementById("likedQuotesList").innerHTML = "";
+    if (likedQuotes.length === 0) {
+        document.getElementById("likedQuotesList").innerHTML = "<li>No liked quotes yet.</li>";
+        return;
+    }
+    likedQuotes.forEach(quote => {
+        const li = document.createElement("li");
+        li.innerHTML = quote;
+        document.getElementById("likedQuotesList").appendChild(li);
+    });
 }
 
 const authorsList = [

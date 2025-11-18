@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cweþan - quotes</title>
+    <title>cweþan - liked quotes</title>
     <link rel="icon" type="image/png" href="/content/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/content/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/content/favicon/favicon.ico" />
@@ -14,27 +14,13 @@
     <script src="https://kit.fontawesome.com/c6322e8a39.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <button id="modeToggle" onclick="toggleMode()">Change Mode</button>
+    <h1>Liked Quotes</h1>
+    <div id="likedQuotesContainer">
+        <ul id="likedQuotesList">
 
-    <h1>cweþan</h1>
 
-    <button type="button" id="likedQuotesButton" onclick="window.location.href='liked.html'">View Liked Quotes</button>
-
-    <div class="quoteBox">
-
-        <p id="quote">
-
-        </p>
-        <button class="likeButton" id="likeButton" onclick="likeQuote()">
-            <i class="fa-regular fa-heart"></i>
-        </button>
-        <br>
-        <hr id="divider">
-        <button type="button" id="newQuoteButton" onclick="newQuote()">New Quote</button>
-
+        </ul>
     </div>
-
-    <footer>© <a href="https://seneth.me/" target="_blank">seneth.me</a></footer>
 </body>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </html>
