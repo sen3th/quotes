@@ -29,6 +29,8 @@ window.addEventListener("keydown", (event) => {
         setTimeout(() => {
             const selectedQuote = quoteList[prevIndex];
             quoteElement.innerHTML = selectedQuote;
+            
+            updateLikeButtonState();
 
             const tmp = lastIndex;
             lastIndex = prevIndex;
@@ -49,6 +51,8 @@ function newQuote() {
         }
         const selectedQuote = quoteList[randomIndex];
         quoteElement.innerHTML = selectedQuote;
+        
+        updateLikeButtonState();
         quoteElement.classList.remove("hide");
         
         prevIndex = lastIndex;
@@ -64,6 +68,7 @@ function toggleMode() {
     document.getElementById("newQuoteButton").classList.toggle("dark-mode");
     document.getElementById("likeButton").classList.toggle("dark-mode");
     document.getElementById("likedQuotesButton")?.classList.toggle("dark-mode");
+    document.getElementById("homeButton")?.classList.toggle("dark-mode");
 }
 
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -83,8 +88,9 @@ function likeQuote() {
 }
 
 function saveLikedQuotes() {
-    const currentQuote = quoteElement.innerHTML;
-    if (likeButton.classList.contains("liked")) {
+    const currentQuote = quoteElement?.innerHTML || "";
+    const likeButton = document.getElementById("likeButton");
+    if (likeButton && likeButton.classList.contains("liked")) {
         if (!likedQuotes.includes(currentQuote)) {
             likedQuotes.push(currentQuote);
         }
@@ -95,6 +101,25 @@ function saveLikedQuotes() {
         }
     }
     localStorage.setItem("likedQuotes", JSON.stringify(likedQuotes));
+}
+
+
+function isQuoteLiked(quote) {
+    return likedQuotes.includes(quote);
+}
+
+
+function updateLikeButtonState() {
+    const likeButton = document.getElementById("likeButton");
+    if (!likeButton || !quoteElement) return;
+    const currentQuote = quoteElement.innerHTML || "";
+    if (isQuoteLiked(currentQuote)) {
+        likeButton.classList.add("liked");
+        likeButton.innerHTML = `<i class="fa-solid fa-heart"></i>`;
+    } else {
+        likeButton.classList.remove("liked");
+        likeButton.innerHTML = `<i class="fa-regular fa-heart"></i>`;
+    }
 }
 
 function displayLikedQuotes() {
@@ -109,6 +134,16 @@ function displayLikedQuotes() {
         document.getElementById("likedQuotesList").appendChild(li);
     });
 }
+
+function clearLikedQuotes() {
+    likedQuotes.length = 0;
+    localStorage.removeItem("likedQuotes");
+    if (document.getElementById("likedQuotesList")) {
+        displayLikedQuotes();
+    }
+    updateLikeButtonState();
+}
+
 
 const authorsList = [
     {id: 1, name: "Oscar Wilde"},
