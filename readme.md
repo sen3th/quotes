@@ -14,7 +14,7 @@ Currently, all the quotes are added manually. In future updates, I plan to integ
 2. Open `index.html` in your browser
 
 ## Usage
-Simply open the [website](https://xn--cwean-yva.seneth.me/) or the `index.html` file in a web browser to view random quotes. Click the "New Quote" button or press 'Enter' or the 'Right Arrow' key to see a different quote. Go back to the previous quote using the 'Left Arrow' key. You can also like quotes and view them on a separate page.
+Simply open the [website](https://cweþan.seneth.me/) or the `index.html` file in a web browser to view random quotes. Click the "New Quote" button or press 'Enter' or the 'Right Arrow' key to see a different quote. Go back to the previous quote using the 'Left Arrow' key. You can also like quotes and view them on a separate page.
 
 ## Languages Used
 - HTML
