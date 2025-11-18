@@ -66,8 +66,10 @@ function toggleMode() {
     if (heading) heading.classList.toggle("dark-mode");
     if (quoteElement) quoteElement.classList.toggle("dark-mode");
     document.getElementById("modeToggle").classList.toggle("dark-mode");
-    document.getElementById("newQuoteButton").classList.toggle("dark-mode");
-    document.getElementById("likeButton").classList.toggle("dark-mode");
+    const newQuoteBtn = document.getElementById("newQuoteButton");
+    if (newQuoteBtn) newQuoteBtn.classList.toggle("dark-mode");
+    const likeBtn = document.getElementById("likeButton");
+    if (likeBtn) likeBtn.classList.toggle("dark-mode");
     const likedBtn = document.getElementById("likedQuotesButton");
     if (likedBtn) likedBtn.classList.toggle("dark-mode");
     const homeBtn = document.getElementById("homeButton");
