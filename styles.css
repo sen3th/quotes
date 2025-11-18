@@ -192,6 +192,7 @@ footer a {
     border-radius: 2px;
     cursor: pointer;
     text-decoration: none;
+    transition: background-color 300ms ease, color 300ms ease, transform 150ms ease, opacity 300ms ease;
 }
 
 #likedQuotesButton.dark-mode {
@@ -206,12 +207,63 @@ footer a {
     border-radius: 2px;
     cursor: pointer;
     text-decoration: none;
+    transition: background-color 300ms ease, color 300ms ease, transform 150ms ease, opacity 300ms ease;
 }
 
 #likedQuotesButton.dark-mode:hover{
     background-color: #f3e6c6;
     cursor: pointer;
-    transition: background-color 0.5s;
+    transform: scale(1.05);
+}
+
+.dark-mode #likedQuotesButton {
+    position: fixed;
+    top: 10px;
+    right: 150px;
+    padding: 5px 10px;
+    font-size: medium;
+    color: #4f3b00;
+    background-color: rgb(231, 200, 148);
+    border: 1.5px solid #4f3b00;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 300ms ease, color 300ms ease, transform 150ms ease, opacity 300ms ease;
+}
+
+#homeButton {
+    position: fixed;
+    top: 10px;
+    right: 150px;
+    padding: 5px 10px;
+    font-size: medium;
+    color: #4f3b00;
+    background-color: rgb(255, 241, 219);
+    border: 1.5px solid #4f3b00;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 300ms ease, color 300ms ease, transform 150ms ease, opacity 300ms ease;
+}
+
+#homeButton.dark-mode {
+    position: fixed;
+    top: 10px;
+    right: 150px;
+    padding: 5px 10px;
+    font-size: medium;
+    color: #4f3b00;
+    background-color: rgb(231, 200, 148);
+    border: 1.5px solid #4f3b00;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 300ms ease, color 300ms ease, transform 150ms ease, opacity 300ms ease;
+}
+
+#homeButton:hover{
+    background-color: #f3e6c6;
+    cursor: pointer;
     transform: scale(1.05);
 }
 
@@ -228,3 +280,25 @@ footer a {
     cursor: pointer;
     text-decoration: none;
 }
+
+#homeButton.dark-mode:hover{
+    background-color: #f3e6c6;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.dark-mode #homeButton {
+    position: fixed;
+    top: 10px;
+    right: 150px;
+    padding: 5px 10px;
+    font-size: medium;
+    color: #4f3b00;
+    background-color: rgb(231, 200, 148);
+    border: 1.5px solid #4f3b00;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 300ms ease, color 300ms ease, transform 150ms ease, opacity 300ms ease;
+}
+

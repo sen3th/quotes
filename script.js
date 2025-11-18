@@ -62,13 +62,16 @@ function newQuote() {
 
 function toggleMode() {
     document.body.classList.toggle("dark-mode");
-    document.querySelector("h1").classList.toggle("dark-mode");
-    quoteElement.classList.toggle("dark-mode");
+    const heading = document.querySelector("h1");
+    if (heading) heading.classList.toggle("dark-mode");
+    if (quoteElement) quoteElement.classList.toggle("dark-mode");
     document.getElementById("modeToggle").classList.toggle("dark-mode");
     document.getElementById("newQuoteButton").classList.toggle("dark-mode");
     document.getElementById("likeButton").classList.toggle("dark-mode");
-    document.getElementById("likedQuotesButton")?.classList.toggle("dark-mode");
-    document.getElementById("homeButton")?.classList.toggle("dark-mode");
+    const likedBtn = document.getElementById("likedQuotesButton");
+    if (likedBtn) likedBtn.classList.toggle("dark-mode");
+    const homeBtn = document.getElementById("homeButton");
+    if (homeBtn) homeBtn.classList.toggle("dark-mode");
 }
 
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
