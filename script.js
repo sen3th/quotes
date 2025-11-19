@@ -162,7 +162,7 @@ const authorsList = [
     {id: 5, name: "Wayne Gretzky"},
     {id: 6, name: "Friedrich Nietzsche"},
     {id: 7, name: "Theodore Roosevelt"},
-    {id: 8, name: "Dorothy Gale"},
+    {id: 8, name: "Dorothy Gale*"},
     {id: 9, name: "Franklin D. Roosevelt"},
     {id: 10, name: "Frank Zappa"},
     {id: 11, name: "Mae West"},
