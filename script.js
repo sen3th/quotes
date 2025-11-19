@@ -168,6 +168,24 @@ const authorsList = [
     {id: 11, name: "Mae West"},
     {id: 12, name: "Mahatma Gandhi"},
     {id: 13, name: "Maya Angelou"},
+    {id: 14, name: "Sherlock Holmes*"},
+    {id: 15, name: "Rene Descartes"},
+    {id: 16, name: "Terminator*"},
+    {id: 17, name: "Albert Einstein"},
+    {id: 18, name: "Star Wars*"},
+    {id: 19, name: "J.R.R. Tolkien"},
+    {id: 20, name: "The Bible*"},
+    {id: 21, name: "Aesop*"},
+    {id: 22, name: "Martin Luther King Jr."},
+    {id: 23, name: "Horace"},
+    {id: 24, name: "Francis Bacon"},
+    {id: 25, name: "Buzz Lightyear*"},
+    {id: 26, name: "Henry Longfellow"},
+    {id: 27, name: "John A. Shedd"},
+    {id: 28, name: "The Highwayman*(OTGW)"},
+    {id: 29, name: "Arthur C. Clarke"},
+    {id: 30, name: "George Orwell"},
+
 ];
 
 const quoteList = [
@@ -184,6 +202,29 @@ const quoteList = [
     {text:"You only live once, but if you do it right, once is enough.", authorId: 11},
     {text:"Be the change that you wish to see in the world.", authorId: 12},
     {text:"I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.", authorId: 13},
+    {text:"All that glitters is not gold.", authorId: 4},
+    {text:"Elementary, my dear Watson.", authorId: 14},
+    {text:"I think, therefore I am.", authorId: 15},
+    {text:"I'll be back.", authorId: 16},
+    {text:"Life is like riding a bicycle. To keep your balance, you must keep moving.", authorId: 17},
+    {text:"May the Force be with you.", authorId: 18},
+    {text:"Not all those who wander are lost.", authorId: 19},
+    {text:"Parting is such sweet sorrow.", authorId: 4},
+    {text:"Speak softly and carry a big stick; you will go far.", authorId: 7},
+    {text:"The truth will set you free.", authorId: 20},
+    {text:"To be, or not to be, that is the question.", authorId: 4},
+    {text:"United we stand, divided we fall.", authorId: 21},
+    {text:"I have a dream.", authorId: 22},
+    {text:"Carpe diem.", authorId: 23},
+    {text:"Knowledge is power.", authorId: 24},
+    {text:"To infinity and beyond!", authorId: 25},
+    {text:"We judge ourselves by what we feel capable of doing, while others judge us by what we have already done.", authorId: 26},
+    {text:"A ship in harbor is safe, but that is not what ships are built for.", authorId: 27},
+    {text:"I'm the Highwayman.", authorId: 28},
+    {text:"Any sufficiently advanced technology is indistinguishable from magic.", authorId: 29},
+    {text:"Big Brother is watching you.", authorId: 30},
+
+
 ].map(quote => {
     const author = authorsList.find(a => a.id === quote.authorId);
     return `${quote.text} <br> <span class='author'>-${author.name}</span>`;
