@@ -399,6 +399,7 @@ likedQuotesList {
     background: transparent;
     user-select: none;
     border: 2px solid rgb(100, 85, 85);
+    border-radius: 7px;
     line-height: 0.15rem;
     padding: 5px 10px;
 }
@@ -409,6 +410,7 @@ likedQuotesList {
     background: transparent;
     user-select: none;
     border: 2px solid oldlace;
+    border-radius: 7px;
     line-height: 0.15rem;
     padding: 5px 10px;
 }
