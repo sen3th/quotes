@@ -78,6 +78,8 @@ function toggleMode() {
     if (clearLikedBtn) clearLikedBtn.classList.toggle("dark-mode");
     const likedQuotesList = document.getElementById("likedQuotesList");
     if (likedQuotesList) likedQuotesList.classList.toggle("dark-mode");
+    const subtitle = document.querySelector(".header-wrapper .subtitle");
+    if (subtitle) subtitle.classList.toggle("dark-mode");
 }
 
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -152,6 +154,24 @@ function clearLikedQuotes() {
     }
     updateLikeButtonState();
 }
+
+(function(){
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (!isTouch) return;
+    document.addEventListener('DOMContentLoaded', () => {
+        const header = document.querySelector('.header-wrapper');
+        if (!header) return;
+        header.addEventListener('click', (e) => {
+            if (!header.classList.contains('open')) {
+                header.classList.add('open');
+                e.stopPropagation();
+                e.preventDefault();
+                const close = () => { header.classList.remove('open'); document.removeEventListener('click', close); };
+                setTimeout(() => document.addEventListener('click', close), 0);
+            }
+        });
+    });
+})();
 
 
 const authorsList = [

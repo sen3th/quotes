@@ -36,6 +36,58 @@ h1:hover {
     transition: color 3s;
 }
 
+h1.dark-mode:hover {
+    cursor: default;
+    color: rgb(250, 244, 240);
+    transition: color 3s;
+}
+
+.header-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+}
+
+.header-wrapper h1 {
+    margin: 0;
+}
+
+.header-wrapper .subtitle {
+    position: absolute;
+    left: 100%; 
+    top: 50%;
+    transform: translateX(12px) translateY(-50%);
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: transform 280ms cubic-bezier(.2,.9,.2,1), opacity 240ms ease;
+    z-index: 10;
+    background: transparent;
+    margin-left: 12px;
+}
+
+.header-wrapper:hover .subtitle,
+.header-wrapper:focus-within .subtitle,
+.header-wrapper.open .subtitle {
+    transform: translateX(0) translateY(-50%);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media (max-width: 420px) {
+    .header-wrapper .subtitle {
+        left: auto;
+        right: 100%;
+        transform: translateX(-12px) translateY(-50%);
+    }
+    .header-wrapper:hover .subtitle,
+    .header-wrapper:focus-within .subtitle,
+    .header-wrapper.open .subtitle {
+        transform: translateX(0) translateY(-50%);
+        opacity: 1;
+    }
+}
+
 .quoteBox {
     align-items: center;
     text-align: center;
@@ -339,4 +391,24 @@ likedQuotesList {
     font-size: large;
     color: rgb(250, 244, 240);
     opacity: 1;
+}
+
+.subtitle {
+    font-size: medium;
+    color: rgb(86, 86, 86);
+    background: transparent;
+    user-select: none;
+    border: 2px solid rgb(100, 85, 85);
+    line-height: 0.15rem;
+    padding: 5px 10px;
+}
+
+.subtitle.dark-mode {
+    font-size: medium;
+    color: rgb(227, 199, 199);
+    background: transparent;
+    user-select: none;
+    border: 2px solid oldlace;
+    line-height: 0.15rem;
+    padding: 5px 10px;
 }
